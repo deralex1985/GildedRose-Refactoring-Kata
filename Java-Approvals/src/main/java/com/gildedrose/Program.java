@@ -7,7 +7,7 @@ public class Program {
 
         EnrichedItem[] items = new EnrichedItem[] {
 				new EnrichedItem("+5 Dexterity Vest", 10, 20),
-				new EnrichedItem("Aged Brie", 2, 0),
+				new AgedBrie("Aged Brie", 2, 0),
 				new EnrichedItem("Elixir of the Mongoose", 5, 7),
 				new EnrichedItem("Sulfuras, Hand of Ragnaros", 0, 80),
 				new EnrichedItem("Sulfuras, Hand of Ragnaros", -1, 80),

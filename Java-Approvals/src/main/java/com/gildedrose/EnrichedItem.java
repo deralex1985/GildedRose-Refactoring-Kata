@@ -39,31 +39,31 @@ public class EnrichedItem extends Item {
             }
         }
     }
-    private void updateSellIn() { //False Friend
+    protected void updateSellIn() { //False Friend
         sellIn = sellIn - 1;
     }
 
-    private void setQualityToZero() { //False Friend
+    protected void setQualityToZero() { //False Friend
         quality = 0;
     }
 
-    private void increaseQualityByOne() { //False Friend
+    protected void increaseQualityByOne() { //False Friend
         quality = quality + 1;
     }
 
-    private void decreaseQualityByOne() {  //False Friend
+    protected void decreaseQualityByOne() {  //False Friend
         quality = quality - 1;
     }
 
-    private boolean isSulfuras() { //False Friend
+    protected boolean isSulfuras() { //False Friend
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-    private boolean isBackstagePass() { //False Friend
+    protected boolean isBackstagePass() { //False Friend
         return name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
-    private boolean isAgedBrie() { //False Friend
+    protected boolean isAgedBrie() { //False Friend
         return name.equals("Aged Brie");
     }
 }
