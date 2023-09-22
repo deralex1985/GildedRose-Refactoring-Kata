@@ -14,11 +14,7 @@ class GildedRose {
     }
 
     private void updateCurrentItemQuality(Item currentItem) {
-        if (!isAgedBrie(currentItem) && !isBackstagePass(currentItem)) {
-            if (currentItem.quality > 0 && !isSulfuras(currentItem)) {
-                decreaseQuality(currentItem, 1);
-            }
-        } else {
+        if (isAgedBrie(currentItem) || isBackstagePass(currentItem)) {
             if (currentItem.quality < 50) {
                 increaseQualityByOne(currentItem);
 
@@ -31,6 +27,11 @@ class GildedRose {
                     }
                 }
             }
+        } else {
+            if (currentItem.quality > 0 && !isSulfuras(currentItem)) {
+                decreaseQuality(currentItem, 1);
+            }
+
         }
 
         if (!isSulfuras(currentItem)) {
