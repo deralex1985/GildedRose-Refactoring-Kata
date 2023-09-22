@@ -17,7 +17,6 @@ public class Program {
             // this conjured item does not work properly yet
             new ConjuredManaCake(3, 6)
         };
-
         GildedRose app = new GildedRose(items);
 
         for (int i = 0; i < 31; i++) {

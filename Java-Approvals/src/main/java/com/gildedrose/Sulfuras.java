@@ -2,10 +2,10 @@ package com.gildedrose;
 
 public class Sulfuras extends EnrichedItem {
 
-    static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    private static final String NAME = "Sulfuras, Hand of Ragnaros";
 
     public Sulfuras(int sellIn, int quality) {
-        super(SULFURAS_HAND_OF_RAGNAROS, sellIn, quality);
+        super(NAME, sellIn, quality);
     }
 
     @Override
