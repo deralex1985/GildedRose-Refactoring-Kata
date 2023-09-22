@@ -27,11 +27,8 @@ class GildedRose {
                     }
                 }
             }
-        } else {
-            if (currentItem.quality > 0 && !isSulfuras(currentItem)) {
-                decreaseQuality(currentItem, 1);
-            }
-
+        } else if (currentItem.quality > 0 && !isSulfuras(currentItem)) {
+            decreaseQualityByOne(currentItem);
         }
 
         if (!isSulfuras(currentItem)) {
@@ -43,7 +40,7 @@ class GildedRose {
                 if (isBackstagePass(currentItem)) {
                     setQualityToZero(currentItem);
                 } else if (currentItem.quality > 0 && !isSulfuras(currentItem)) {
-                    decreaseQuality(currentItem, 1);
+                    decreaseQualityByOne(currentItem);
                 }
             } else if (currentItem.quality < 50) {
                 increaseQualityByOne(currentItem);
@@ -51,20 +48,20 @@ class GildedRose {
         }
     }
 
-    private void updateSellIn(Item currentItem) {
+    private void updateSellIn(Item currentItem) { //False Friend
         currentItem.sellIn = currentItem.sellIn - 1;
     }
 
-    private void setQualityToZero(Item currentItem) {
+    private void setQualityToZero(Item currentItem) { //False Friend
         currentItem.quality = 0;
     }
 
-    private void increaseQualityByOne(Item currentItem) {
+    private void increaseQualityByOne(Item currentItem) { //False Friend
         currentItem.quality = currentItem.quality + 1;
     }
 
-    private void decreaseQuality(Item currentItem, int qualityChangeAmount) {  //False Friend
-        currentItem.quality = currentItem.quality - qualityChangeAmount;
+    private void decreaseQualityByOne(Item currentItem) {  //False Friend
+        currentItem.quality = currentItem.quality - 1;
     }
 
     private boolean isSulfuras(Item currentItem) { //False Friend
