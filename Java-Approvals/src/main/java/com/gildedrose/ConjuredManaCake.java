@@ -7,9 +7,4 @@ public class ConjuredManaCake extends EnrichedItem {
         super(CONJURED_MANA_CAKE, sellIn, quality);
         amountOfQualityChange = 2;
     }
-
-    @Override
-    public void updateQuality() {
-        super.updateQuality();
-    }
 }
