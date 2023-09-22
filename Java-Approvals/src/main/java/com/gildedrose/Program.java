@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import java.util.stream.IntStream;
+
 public class Program {
 
     public static void main(String... args) {
@@ -19,17 +21,17 @@ public class Program {
         };
         GildedRose app = new GildedRose(items);
 
-        for (int i = 0; i < 31; i++) {
-            printHeaderForDay(items, i);
+        for (int dayNr = 0; dayNr < 31; dayNr++) {
+            printHeader(items, dayNr);
             app.updateQuality();
         }
     }
 
-    private static void printHeaderForDay(EnrichedItem[] items, int i) {
-        System.out.println("-------- day " + i + " --------");
+    private static void printHeader(EnrichedItem[] items, int dayNr) {
+        System.out.println("-------- day " + dayNr + " --------");
         System.out.println("name, sellIn, quality");
-        for (int j = 0; j < items.length; j++) {
-            System.out.println(items[j]);
+        for (EnrichedItem item : items) {
+            System.out.println(item);
         }
         System.out.println("");
     }
