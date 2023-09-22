@@ -20,13 +20,17 @@ public class Program {
         GildedRose app = new GildedRose(items);
 
         for (int i = 0; i < 31; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
-            for (int j = 0; j < items.length; j++) {
-                System.out.println(items[j]);
-            }
-            System.out.println("");
+            printHeaderForDay(items, i);
             app.updateQuality();
         }
+    }
+
+    private static void printHeaderForDay(EnrichedItem[] items, int i) {
+        System.out.println("-------- day " + i + " --------");
+        System.out.println("name, sellIn, quality");
+        for (int j = 0; j < items.length; j++) {
+            System.out.println(items[j]);
+        }
+        System.out.println("");
     }
 }
