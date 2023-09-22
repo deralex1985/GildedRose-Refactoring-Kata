@@ -24,17 +24,12 @@ class GildedRose {
             if (currentItem.quality < 50) {
                 increaseQualityByOne(currentItem);
 
-                if (isBackstagePass(currentItem)) {
+                if (isBackstagePass(currentItem) && currentItem.quality < 50) {
                     if (currentItem.sellIn < 11) {
-                        if (currentItem.quality < 50) {
                             increaseQualityByOne(currentItem);
-                        }
                     }
-
                     if (currentItem.sellIn < 6) {
-                        if (currentItem.quality < 50) {
                             increaseQualityByOne(currentItem);
-                        }
                     }
                 }
             }
