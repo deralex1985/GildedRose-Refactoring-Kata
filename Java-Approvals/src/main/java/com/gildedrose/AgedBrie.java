@@ -7,6 +7,7 @@ public class AgedBrie extends EnrichedItem {
         super(AGED_BRIE, sellIn, quality);
     }
 
+    @Override
     public void updateQuality() {
         if (quality < 50) {
             increaseQualityByOne();

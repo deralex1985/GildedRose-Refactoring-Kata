@@ -7,6 +7,7 @@ public class BackstagePass extends EnrichedItem {
         super(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, sellIn, quality);
     }
 
+    @Override
     public void updateQuality() {
         if (quality < 50) {
             increaseQualityByOne();

@@ -8,6 +8,7 @@ public class Sulfuras extends EnrichedItem {
         super(SULFURAS_HAND_OF_RAGNAROS, sellIn, quality);
     }
 
+    @Override
     public void updateQuality() {
         // Kein Update gemäss Anforderungen
     }
