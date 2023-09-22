@@ -39,19 +39,13 @@ class GildedRose {
 
         if (currentItem.sellIn < 0) {
             if (!isAgedBrie(currentItem)) {
-                if (!isBackstagePass(currentItem)) {
-                    if (currentItem.quality > 0) {
-                        if (!isSulfuras(currentItem)) {
-                            decreaseQuality(currentItem, 1);
-                        }
-                    }
-                } else {
+                if (isBackstagePass(currentItem)) {
                     setQualityToZero(currentItem);
+                } else if (currentItem.quality > 0 && !isSulfuras(currentItem)) {
+                    decreaseQuality(currentItem, 1);
                 }
-            } else {
-                if (currentItem.quality < 50) {
-                    increaseQualityByOne(currentItem);
-                }
+            } else if (currentItem.quality < 50) {
+                increaseQualityByOne(currentItem);
             }
         }
     }
