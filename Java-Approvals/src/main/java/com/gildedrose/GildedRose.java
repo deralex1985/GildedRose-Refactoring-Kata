@@ -22,18 +22,18 @@ class GildedRose {
             }
         } else {
             if (currentItem.quality < 50) {
-                currentItem.quality = currentItem.quality + 1;
+                increaseQualityByOne(currentItem);
 
                 if (isBackstagePass(currentItem)) {
                     if (currentItem.sellIn < 11) {
                         if (currentItem.quality < 50) {
-                            currentItem.quality = currentItem.quality + 1;
+                            increaseQualityByOne(currentItem);
                         }
                     }
 
                     if (currentItem.sellIn < 6) {
                         if (currentItem.quality < 50) {
-                            currentItem.quality = currentItem.quality + 1;
+                            increaseQualityByOne(currentItem);
                         }
                     }
                 }
@@ -53,14 +53,22 @@ class GildedRose {
                         }
                     }
                 } else {
-                    decreaseQuality(currentItem, currentItem.quality);
+                    setQualityToZero(currentItem);
                 }
             } else {
                 if (currentItem.quality < 50) {
-                    currentItem.quality = currentItem.quality + 1;
+                    increaseQualityByOne(currentItem);
                 }
             }
         }
+    }
+
+    private void setQualityToZero(Item currentItem) {
+        currentItem.quality = 0;
+    }
+
+    private void increaseQualityByOne(Item currentItem) {
+        currentItem.quality = currentItem.quality + 1;
     }
 
     private void decreaseQuality(Item currentItem, int qualityChangeAmount) {  //False Friend
