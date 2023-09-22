@@ -5,17 +5,17 @@ public class Program {
 	public static void main(String... args) {
 		System.out.println("OMGHAI!");
 
-        ExtendedItem[] items = new ExtendedItem[] {
-				new ExtendedItem("+5 Dexterity Vest", 10, 20),
-				new ExtendedItem("Aged Brie", 2, 0),
-				new ExtendedItem("Elixir of the Mongoose", 5, 7),
-				new ExtendedItem("Sulfuras, Hand of Ragnaros", 0, 80),
-				new ExtendedItem("Sulfuras, Hand of Ragnaros", -1, 80),
-				new ExtendedItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-				new ExtendedItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-				new ExtendedItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+        EnrichedItem[] items = new EnrichedItem[] {
+				new EnrichedItem("+5 Dexterity Vest", 10, 20),
+				new EnrichedItem("Aged Brie", 2, 0),
+				new EnrichedItem("Elixir of the Mongoose", 5, 7),
+				new EnrichedItem("Sulfuras, Hand of Ragnaros", 0, 80),
+				new EnrichedItem("Sulfuras, Hand of Ragnaros", -1, 80),
+				new EnrichedItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+				new EnrichedItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+				new EnrichedItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
 				// this conjured item does not work properly yet
-				new ExtendedItem("Conjured Mana Cake", 3, 6) };
+				new EnrichedItem("Conjured Mana Cake", 3, 6) };
 
 		GildedRose app = new GildedRose(items);
 

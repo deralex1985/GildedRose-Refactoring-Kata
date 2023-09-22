@@ -1,15 +1,15 @@
 package com.gildedrose;
 
 class GildedRose {
-    private final ExtendedItem[] items;
+    private final EnrichedItem[] items;
 
-    public GildedRose(ExtendedItem[] items) {
+    public GildedRose(EnrichedItem[] items) {
         this.items = items;
     }
 
     public void updateQuality() {
-        for (ExtendedItem currentItem : items) {
-            currentItem.updateCurrentItemQuality();
+        for (EnrichedItem item : items) {
+            item.updateQuality();
         }
     }
 

@@ -1,13 +1,13 @@
 package com.gildedrose;
 
-public class ExtendedItem extends Item {
+public class EnrichedItem extends Item {
 
 
-    public ExtendedItem(String name, int sellIn, int quality) {
+    public EnrichedItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
-    public void updateCurrentItemQuality() {
+    public void updateQuality() {
         if (isAgedBrie() || isBackstagePass()) {
             if (quality < 50) {
                 increaseQualityByOne();
