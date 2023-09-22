@@ -41,7 +41,7 @@ class GildedRose {
         }
 
         if (!isSulfuras(currentItem)) {
-            currentItem.sellIn = currentItem.sellIn - 1;
+            updateSellIn(currentItem);
         }
 
         if (currentItem.sellIn < 0) {
@@ -61,6 +61,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private void updateSellIn(Item currentItem) {
+        currentItem.sellIn = currentItem.sellIn - 1;
     }
 
     private void setQualityToZero(Item currentItem) {
