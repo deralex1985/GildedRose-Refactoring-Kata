@@ -7,7 +7,17 @@ public class Program {
     public static void main(String... args) {
         System.out.println("OMGHAI!");
 
-        EnrichedItem[] items = new EnrichedItem[]{
+        EnrichedItem[] items = createEnrichedItems();
+        GildedRose app = new GildedRose(items);
+
+        for (int dayNr = 0; dayNr < 31; dayNr++) {
+            printHeader(items, dayNr);
+            app.updateQuality();
+        }
+    }
+
+    private static EnrichedItem[] createEnrichedItems() {
+        return new EnrichedItem[]{
             new EnrichedItem("+5 Dexterity Vest", 10, 20),
             new AgedBrie(2, 0),
             new EnrichedItem("Elixir of the Mongoose", 5, 7),
@@ -16,15 +26,8 @@ public class Program {
             new BackstagePass(15, 20),
             new BackstagePass(10, 49),
             new BackstagePass(5, 49),
-            // this conjured item does not work properly yet
             new ConjuredManaCake(3, 6)
         };
-        GildedRose app = new GildedRose(items);
-
-        for (int dayNr = 0; dayNr < 31; dayNr++) {
-            printHeader(items, dayNr);
-            app.updateQuality();
-        }
     }
 
     private static void printHeader(EnrichedItem[] items, int dayNr) {
