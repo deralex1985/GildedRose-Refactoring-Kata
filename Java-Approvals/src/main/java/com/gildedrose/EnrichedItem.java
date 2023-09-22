@@ -8,38 +8,26 @@ public class EnrichedItem extends Item {
     }
 
     public void updateQuality() {
-        if (quality > 0 && !isSulfuras()) {
+        if (quality > 0) {
             decreaseQualityByOne();
         }
 
-        if (!isSulfuras()) {
-            updateSellIn();
-        }
+        updateSellIn();
 
-        if (sellIn < 0) {
-            if (!isSulfuras() && quality > 0) {
-                decreaseQualityByOne();
-            }
+        if (sellIn < 0 && quality > 0) {
+            decreaseQualityByOne();
         }
     }
-    protected void updateSellIn() { //False Friend
+
+    protected void updateSellIn() {
         sellIn = sellIn - 1;
     }
 
-    protected void increaseQualityByOne() { //False Friend
+    protected void increaseQualityByOne() {
         quality = quality + 1;
     }
 
-    protected void decreaseQualityByOne() {  //False Friend
+    protected void decreaseQualityByOne() {
         quality = quality - 1;
     }
-
-    protected boolean isSulfuras() { //False Friend
-        return name.equals("Sulfuras, Hand of Ragnaros");
-    }
-
-    protected boolean isBackstagePass() { //False Friend
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
-    }
-
 }
