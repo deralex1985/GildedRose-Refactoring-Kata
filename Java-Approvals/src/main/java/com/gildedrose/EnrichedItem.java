@@ -8,7 +8,7 @@ public class EnrichedItem extends Item {
     }
 
     public void updateQuality() {
-        if (isAgedBrie() || isBackstagePass()) {
+        if (isBackstagePass()) {
             if (quality < 50) {
                 increaseQualityByOne();
 
@@ -32,10 +32,8 @@ public class EnrichedItem extends Item {
         if (sellIn < 0) {
             if (isBackstagePass()) {
                 setQualityToZero();
-            } else if (!isAgedBrie() && !isSulfuras() && quality > 0) {
+            } else if (!isSulfuras() && quality > 0) {
                 decreaseQualityByOne();
-            } else if (isAgedBrie() && quality < 50) {
-                increaseQualityByOne();
             }
         }
     }
@@ -63,7 +61,4 @@ public class EnrichedItem extends Item {
         return name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
-    protected boolean isAgedBrie() { //False Friend
-        return name.equals("Aged Brie");
-    }
 }
