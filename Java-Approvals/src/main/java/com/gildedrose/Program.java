@@ -6,8 +6,7 @@ public class Program {
         System.out.println("OMGHAI!");
 
         EnrichedItem[] items = new EnrichedItem[]{
-            new EnrichedItem("+5 " +
-                "Dexterity Vest", 10, 20),
+            new EnrichedItem("+5 Dexterity Vest", 10, 20),
             new AgedBrie(2, 0),
             new EnrichedItem("Elixir of the Mongoose", 5, 7),
             new Sulfuras(0, 80),

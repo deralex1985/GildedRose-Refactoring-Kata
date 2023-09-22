@@ -8,15 +8,15 @@ public class EnrichedItem extends Item {
     }
 
     public void updateQuality() {
-        if (quality > 0) {
+        if (quality > 0 ) {
+            decreaseQualityByOne();
+        }
+        if (sellIn < 1 && quality > 0) {
             decreaseQualityByOne();
         }
 
         updateSellIn();
 
-        if (sellIn < 0 && quality > 0) {
-            decreaseQualityByOne();
-        }
     }
 
     protected void updateSellIn() {
