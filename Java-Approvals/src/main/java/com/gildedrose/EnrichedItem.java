@@ -2,20 +2,19 @@ package com.gildedrose;
 
 public class EnrichedItem extends Item {
 
+    int amountOfQualityChange;
+
     public EnrichedItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
+        amountOfQualityChange = 1;
     }
 
-    public void updateQuality() {
-        updateQuality(1);
-    }
-
-    protected void updateQuality(int multiplier) {
+    protected void updateQuality() {
         if (quality > 0) {
-            decreaseQualityBy(multiplier);
+            decreaseQuality();
         }
         if (sellIn < 1 && quality > 0) {
-            decreaseQualityBy(multiplier);
+            decreaseQuality();
         }
 
         updateSellIn();
@@ -29,7 +28,7 @@ public class EnrichedItem extends Item {
         quality = quality + 1;
     }
 
-    protected void decreaseQualityBy(int amount) {
-        quality = quality - amount;
+    protected void decreaseQuality() {
+        quality = quality - amountOfQualityChange;
     }
 }
