@@ -8,20 +8,7 @@ public class EnrichedItem extends Item {
     }
 
     public void updateQuality() {
-        if (isBackstagePass()) {
-            if (quality < 50) {
-                increaseQualityByOne();
-
-                if (isBackstagePass() && quality < 50) {
-                    if (sellIn < 11) {
-                        increaseQualityByOne();
-                    }
-                    if (sellIn < 6) {
-                        increaseQualityByOne();
-                    }
-                }
-            }
-        } else if (quality > 0 && !isSulfuras()) {
+        if (quality > 0 && !isSulfuras()) {
             decreaseQualityByOne();
         }
 
@@ -30,19 +17,13 @@ public class EnrichedItem extends Item {
         }
 
         if (sellIn < 0) {
-            if (isBackstagePass()) {
-                setQualityToZero();
-            } else if (!isSulfuras() && quality > 0) {
+            if (!isSulfuras() && quality > 0) {
                 decreaseQualityByOne();
             }
         }
     }
     protected void updateSellIn() { //False Friend
         sellIn = sellIn - 1;
-    }
-
-    protected void setQualityToZero() { //False Friend
-        quality = 0;
     }
 
     protected void increaseQualityByOne() { //False Friend
