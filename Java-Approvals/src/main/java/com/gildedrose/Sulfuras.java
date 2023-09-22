@@ -1,8 +1,11 @@
 package com.gildedrose;
 
 public class Sulfuras extends EnrichedItem {
-    public Sulfuras(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+
+    static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+
+    public Sulfuras(int sellIn, int quality) {
+        super(SULFURAS_HAND_OF_RAGNAROS, sellIn, quality);
     }
 
     public void updateQuality() {

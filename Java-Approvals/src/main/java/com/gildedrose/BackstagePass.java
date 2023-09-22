@@ -1,8 +1,10 @@
 package com.gildedrose;
 
 public class BackstagePass extends EnrichedItem {
-    public BackstagePass(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public static final String BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
+
+    public BackstagePass(int sellIn, int quality) {
+        super(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, sellIn, quality);
     }
 
     public void updateQuality() {
